@@ -1,0 +1,652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72A60E0E-A852-422A-BB5D-E8147210080A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Maps.NET</RootNamespace>
+    <AssemblyName>Maps.NET</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icono.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Maps.MapControl.WPF">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Bing Maps WPF Control\V1\Libraries\Microsoft.Maps.MapControl.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Ribbon for WPF\V4.0\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="system.windows.controls.datavisualization.toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="system.windows.controls.input.toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\WPF Toolkit\v3.5.50211.1\WPFToolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BingMaps\BingRoute\Direction.cs" />
+    <Compile Include="GoogleMaps\GoogleRoute\GeneralDirections.cs" />
+    <Compile Include="BingMaps\BingRoute\Route.cs" />
+    <Compile Include="GoogleMaps\GoogleElevation\Elevat.cs" />
+    <Compile Include="GoogleMaps\GoogleGeocoding\PostalCod.cs" />
+    <Compile Include="GoogleMaps\GoogleGeocoding\PostalCode.cs" />
+    <Compile Include="GoogleMaps\GoogleGeocoding\ReverseGeoco.cs" />
+    <Compile Include="GoogleMaps\GoogleGeocoding\ReverseGeocoding.cs" />
+    <Compile Include="GoogleMaps\GooglePlaces\Autocomplete.cs" />
+    <Compile Include="GoogleMaps\GooglePlaces\Details\DetailsPlace.cs" />
+    <Compile Include="GoogleMaps\GooglePlaces\Details\Photo.cs" />
+    <Compile Include="GoogleMaps\GooglePlaces\Details\Place.cs" />
+    <Compile Include="GoogleMaps\GooglePlaces\Details\Review.cs" />
+    <Compile Include="GoogleMaps\GoogleRoute\Direction.cs" />
+    <Compile Include="GoogleMaps\GoogleRoute\Route.cs" />
+    <Compile Include="GoogleMaps\GoogleStaticInfo.cs" />
+    <Compile Include="GoogleMaps\GoogleStaticMaps\Marker.cs" />
+    <Compile Include="GoogleMaps\GoogleStaticMaps\Route.cs" />
+    <Compile Include="GoogleMaps\GoogleStaticMaps\StaticMap.cs" />
+    <Compile Include="GoogleMaps\GoogleStaticMaps\Style.cs" />
+    <Compile Include="GoogleMaps\GoogleStreet\StreetView.cs" />
+    <Compile Include="Service References\BingServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Static\MapObject.cs" />
+    <Compile Include="Static\StaticAdvices.cs" />
+    <Compile Include="Static\StaticPlaces.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GoogleMaps\GoogleGeocoding\Geoco.cs" />
+    <Compile Include="GoogleMaps\GoogleGeocoding\Geocoding.cs" />
+    <Compile Include="GoogleMaps\GooglePlaces\Place.cs" />
+    <Compile Include="GoogleMaps\GooglePlaces\Places.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="GoogleMaps\GoogleElevation\Elevation.cs" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\BingServices\common.xsd" />
+    <None Include="Service References\BingServices\contracts.wsdl" />
+    <None Include="Service References\BingServices\contracts.xsd" />
+    <None Include="Service References\BingServices\Maps.NET.BingServices.MajorRoutesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BingServices\Maps.NET.BingServices.RouteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BingServices\route.wsdl" />
+    <None Include="Service References\BingServices\route.xsd" />
+    <None Include="Service References\BingServices\service.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Search_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\MoreZoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\LessZoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\Aerial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\Road.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BingServices\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BingServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BingServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BingServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\Key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\Request.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\Center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Search\Location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Search\LocationD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Grid\Close.png" />
+    <Resource Include="Assets\Grid\Close_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Search\PostalCode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Search\Altitude.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Search\StreetView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Grid\Maximice_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Grid\Maximice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places\Types\Accounting.png" />
+    <Resource Include="Assets\Places\Types\Airport.png" />
+    <Resource Include="Assets\Places\Types\Amusement_park.png" />
+    <Resource Include="Assets\Places\Types\Aquarium.png" />
+    <Resource Include="Assets\Places\Types\Art_gallery.png" />
+    <Resource Include="Assets\Places\Types\Atm.png" />
+    <Resource Include="Assets\Places\Types\Bakery.png" />
+    <Resource Include="Assets\Places\Types\Bank.png" />
+    <Resource Include="Assets\Places\Types\Bar.png" />
+    <Resource Include="Assets\Places\Types\Beauty_salon.png" />
+    <Resource Include="Assets\Places\Types\Bicycle_store.png" />
+    <Resource Include="Assets\Places\Types\Book_store.png" />
+    <Resource Include="Assets\Places\Types\Bowling_alley.png" />
+    <Resource Include="Assets\Places\Types\Bus_station.png" />
+    <Resource Include="Assets\Places\Types\Cafe.png" />
+    <Resource Include="Assets\Places\Types\Campground.png" />
+    <Resource Include="Assets\Places\Types\Car_dealer.png" />
+    <Resource Include="Assets\Places\Types\Car_rental.png" />
+    <Resource Include="Assets\Places\Types\Car_repair.png" />
+    <Resource Include="Assets\Places\Types\Car_wash.png" />
+    <Resource Include="Assets\Places\Types\Casino.png" />
+    <Resource Include="Assets\Places\Types\Cemetery.png" />
+    <Resource Include="Assets\Places\Types\Church.png" />
+    <Resource Include="Assets\Places\Types\City_hall.png" />
+    <Resource Include="Assets\Places\Types\Clothing_store.png" />
+    <Resource Include="Assets\Places\Types\Convenience_store.png" />
+    <Resource Include="Assets\Places\Types\Courthouse.png" />
+    <Resource Include="Assets\Places\Types\Dentist.png" />
+    <Resource Include="Assets\Places\Types\Department_store.png" />
+    <Resource Include="Assets\Places\Types\Doctor.png" />
+    <Resource Include="Assets\Places\Types\Electrician.png" />
+    <Resource Include="Assets\Places\Types\Electronics_store.png" />
+    <Resource Include="Assets\Places\Types\Embassy.png" />
+    <Resource Include="Assets\Places\Types\Establishment.png" />
+    <Resource Include="Assets\Places\Types\Finance.png" />
+    <Resource Include="Assets\Places\Types\Fire_station.png" />
+    <Resource Include="Assets\Places\Types\Florist.png" />
+    <Resource Include="Assets\Places\Types\Food.png" />
+    <Resource Include="Assets\Places\Types\Funeral_home.png" />
+    <Resource Include="Assets\Places\Types\Furniture_store.png" />
+    <Resource Include="Assets\Places\Types\Gas_station.png" />
+    <Resource Include="Assets\Places\Types\General_contractor.png" />
+    <Resource Include="Assets\Places\Types\Grocery_or_supermarket.png" />
+    <Resource Include="Assets\Places\Types\Gym.png" />
+    <Resource Include="Assets\Places\Types\Hair_care.png" />
+    <Resource Include="Assets\Places\Types\Hardware_store.png" />
+    <Resource Include="Assets\Places\Types\Health.png" />
+    <Resource Include="Assets\Places\Types\Hindu_temple.png" />
+    <Resource Include="Assets\Places\Types\Home_goods_store.png" />
+    <Resource Include="Assets\Places\Types\Hospital.png" />
+    <Resource Include="Assets\Places\Types\Insurance_agency.png" />
+    <Resource Include="Assets\Places\Types\Jewelry_store.png" />
+    <Resource Include="Assets\Places\Types\Laundry.png" />
+    <Resource Include="Assets\Places\Types\Lawyer.png" />
+    <Resource Include="Assets\Places\Types\Library.png" />
+    <Resource Include="Assets\Places\Types\Liquor_store.png" />
+    <Resource Include="Assets\Places\Types\Local_government_office.png" />
+    <Resource Include="Assets\Places\Types\Locksmith.png" />
+    <Resource Include="Assets\Places\Types\Lodging.png" />
+    <Resource Include="Assets\Places\Types\Man.png" />
+    <Resource Include="Assets\Places\Types\Meal_delivery.png" />
+    <Resource Include="Assets\Places\Types\Meal_takeaway.png" />
+    <Resource Include="Assets\Places\Types\Mosque.png" />
+    <Resource Include="Assets\Places\Types\Movie_rental.png" />
+    <Resource Include="Assets\Places\Types\Movie_theater.png" />
+    <Resource Include="Assets\Places\Types\Moving_company.png" />
+    <Resource Include="Assets\Places\Types\Museum.png" />
+    <Resource Include="Assets\Places\Types\Night_club.png" />
+    <Resource Include="Assets\Places\Types\Painter.png" />
+    <Resource Include="Assets\Places\Types\Park.png" />
+    <Resource Include="Assets\Places\Types\Parking.png" />
+    <Resource Include="Assets\Places\Types\Pet_store.png" />
+    <Resource Include="Assets\Places\Types\Pharmacy.png" />
+    <Resource Include="Assets\Places\Types\Physiotherapist.png" />
+    <Resource Include="Assets\Places\Types\Place_of_worship.png" />
+    <Resource Include="Assets\Places\Types\Plumber.png" />
+    <Resource Include="Assets\Places\Types\Police.png" />
+    <Resource Include="Assets\Places\Types\Post_office.png" />
+    <Resource Include="Assets\Places\Types\Real_estate_agency.png" />
+    <Resource Include="Assets\Places\Types\Restaurant.png" />
+    <Resource Include="Assets\Places\Types\Roofing_contractor.png" />
+    <Resource Include="Assets\Places\Types\Rv_park.png" />
+    <Resource Include="Assets\Places\Types\School.png" />
+    <Resource Include="Assets\Places\Types\Shoe_store.png" />
+    <Resource Include="Assets\Places\Types\Shopping_mall.png" />
+    <Resource Include="Assets\Places\Types\Spa.png" />
+    <Resource Include="Assets\Places\Types\Stadium.png" />
+    <Resource Include="Assets\Places\Types\Storage.png" />
+    <Resource Include="Assets\Places\Types\Store.png" />
+    <Resource Include="Assets\Places\Types\Subway_station.png" />
+    <Resource Include="Assets\Places\Types\Synagogue.png" />
+    <Resource Include="Assets\Places\Types\Taxi_stand.png" />
+    <Resource Include="Assets\Places\Types\Train_station.png" />
+    <Resource Include="Assets\Places\Types\Travel_agency.png" />
+    <Resource Include="Assets\Places\Types\University.png" />
+    <Resource Include="Assets\Places\Types\Veterinary_care.png" />
+    <Resource Include="Assets\Places\Types\Zoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places\Place\Places.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Grid\Back.png" />
+    <Resource Include="Assets\Grid\Back_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places\Place\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places\Place\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places\Place\Unknow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\staticmap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Grid\Next.png" />
+    <Resource Include="Assets\Grid\Next_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Grid\Details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Grid\Filter.png" />
+    <Resource Include="Assets\Grid\Filter_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places\Place\SearchPlace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places\Place\PoweredGoogle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places\Place\FindTerm.png" />
+    <Resource Include="Assets\Places\Place\Place.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places\Place\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places\Place\Relevance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places\Place\Distance.png" />
+    <Resource Include="Assets\Places\Place\Rating.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places\Place\OpenR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Gas_Station.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Wrong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Down_Enter.png" />
+    <Resource Include="Assets\Route\Up_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Down.png" />
+    <Resource Include="Assets\Route\Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Compass\North.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Compass\East.png" />
+    <Resource Include="Assets\Route\Compass\NorthEast.png" />
+    <Resource Include="Assets\Route\Compass\NorthWest.png" />
+    <Resource Include="Assets\Route\Compass\South.png" />
+    <Resource Include="Assets\Route\Compass\SouthEast.png" />
+    <Resource Include="Assets\Route\Compass\SouthWest.png" />
+    <Resource Include="Assets\Route\Compass\West.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Hint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Driving.png" />
+    <Resource Include="Assets\Route\Walking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\MinDistance.png" />
+    <Resource Include="Assets\Route\MinTime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\TrafficTime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\TrafficRouteTime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\TrafficNone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Traffic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Target.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Target_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Route.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Grid\Places.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Grid\Route.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Bicycling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Avoid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Highways.png" />
+    <Resource Include="Assets\Route\Tolls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\NoneAvoid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\StreetView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route\Map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\StaticMap\Advanced.png" />
+    <Resource Include="Assets\StaticMap\Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\StaticMap\Size.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\StaticMap\Format.png" />
+    <Resource Include="Assets\StaticMap\GIF.png" />
+    <Resource Include="Assets\StaticMap\JPG.png" />
+    <Resource Include="Assets\StaticMap\PNG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\StaticMap\MapType.png" />
+    <Resource Include="Assets\StaticMap\RoadMap.png" />
+    <Resource Include="Assets\StaticMap\Satellite.png" />
+    <Resource Include="Assets\StaticMap\Terrain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\StaticMap\Hybrid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\StaticMap\StaticMap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\StaticMap\Advanced\Add.png" />
+    <Resource Include="Assets\StaticMap\Advanced\Add_Enter.png" />
+    <Resource Include="Assets\StaticMap\Advanced\Delete.png" />
+    <Resource Include="Assets\StaticMap\Advanced\Delete_Enter.png" />
+    <Resource Include="Assets\StaticMap\Advanced\Minus.png" />
+    <Resource Include="Assets\StaticMap\Advanced\Minus_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\StaticMap\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\CopyAll.png" />
+    <Resource Include="Assets\Basic\CopyAll_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\Copy_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\Copy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Grid\Save.png" />
+    <Resource Include="Assets\Grid\Save_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Delete.png" />
+    <Resource Include="Assets\Request.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Places.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\RemoveAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Route.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\CloseBlack.png" />
+    <Resource Include="Assets\CloseBlack_Enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\AboutSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icono.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="SplashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Basic\FeedBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\RemoveMarker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Ribbon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
